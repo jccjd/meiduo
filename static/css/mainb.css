@@ -1,0 +1,8 @@
+body{font-family:'Microsoft Yahei';font-size:12px;color:#666;}
+html,body{height:100%}
+/* 顶部样式 */
+.header_con{
+	background-color:#f7f7f7;
+	height:29px;
+	border-bottom:1px solid #dddddd
+}
