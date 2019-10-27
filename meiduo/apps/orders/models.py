@@ -29,8 +29,7 @@ class OrderInfo(BaseModel):
         (3, "待收货"),
         (4, "待评价"),
         (5, "已完成"),
-        (6, "已取消"),
-    )
+        (6, "已取消"),    )
     order_id = models.CharField(max_length=64, primary_key=True, verbose_name="订单号")
     user = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name="下单用户")
     address = models.ForeignKey(Address, on_delete=models.PROTECT, verbose_name="收货地址")

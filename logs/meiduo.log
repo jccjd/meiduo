@@ -19208,3 +19208,317 @@ INFO 2019-10-22 18:30:50,774 basehttp 154 "POST /browse_histories/ HTTP/1.1" 200
 INFO 2019-10-22 18:30:51,050 basehttp 154 "GET /carts/simple/ HTTP/1.1" 200 46
 INFO 2019-10-22 18:31:08,106 basehttp 154 "GET /comments/3/ HTTP/1.1" 200 117261
 INFO 2019-10-22 18:31:08,593 basehttp 154 "GET /favicon.ico HTTP/1.1" 200 117261
+INFO 2019-10-23 15:54:18,765 autoreload 597 Watching for file changes with StatReloader
+ERROR 2019-10-23 15:54:27,339 log 228 Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 583, in connect
+    **kwargs)
+  File "/usr/lib/python3.5/socket.py", line 712, in create_connection
+    raise err
+  File "/usr/lib/python3.5/socket.py", line 703, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 217, in ensure_connection
+    self.connect()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 195, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 227, in get_new_connection
+    return Database.connect(**conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 630, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '47.97.91.156' ([Errno 111] Connection refused)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/io/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/io/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/io/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/io/.local/lib/python3.5/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/io/.local/lib/python3.5/site-packages/django/views/generic/base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/io/PycharmProjects/meiduo/meiduo/apps/contents/views.py", line 20, in get
+    categories = get_categories()
+  File "/home/io/PycharmProjects/meiduo/meiduo/apps/contents/utils.py", line 14, in get_categories
+    for channel in channels:
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/query.py", line 274, in __iter__
+    self._fetch_all()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1098, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 256, in cursor
+    return self._cursor()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 233, in _cursor
+    self.ensure_connection()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 217, in ensure_connection
+    self.connect()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 217, in ensure_connection
+    self.connect()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 195, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 227, in get_new_connection
+    return Database.connect(**conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 630, in connect
+    raise exc
+django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on '47.97.91.156' ([Errno 111] Connection refused)")
+ERROR 2019-10-23 15:54:27,341 basehttp 154 "GET / HTTP/1.1" 500 215984
+ERROR 2019-10-23 15:54:28,273 log 228 Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 583, in connect
+    **kwargs)
+  File "/usr/lib/python3.5/socket.py", line 712, in create_connection
+    raise err
+  File "/usr/lib/python3.5/socket.py", line 703, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 217, in ensure_connection
+    self.connect()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 195, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 227, in get_new_connection
+    return Database.connect(**conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 630, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '47.97.91.156' ([Errno 111] Connection refused)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/io/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/io/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/io/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/io/.local/lib/python3.5/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/io/.local/lib/python3.5/site-packages/django/views/generic/base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/io/PycharmProjects/meiduo/meiduo/apps/contents/views.py", line 20, in get
+    categories = get_categories()
+  File "/home/io/PycharmProjects/meiduo/meiduo/apps/contents/utils.py", line 14, in get_categories
+    for channel in channels:
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/query.py", line 274, in __iter__
+    self._fetch_all()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1098, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 256, in cursor
+    return self._cursor()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 233, in _cursor
+    self.ensure_connection()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 217, in ensure_connection
+    self.connect()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 217, in ensure_connection
+    self.connect()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 195, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 227, in get_new_connection
+    return Database.connect(**conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 630, in connect
+    raise exc
+django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on '47.97.91.156' ([Errno 111] Connection refused)")
+ERROR 2019-10-23 15:54:28,275 basehttp 154 "GET /favicon.ico HTTP/1.1" 500 215848
+ERROR 2019-10-23 15:56:40,446 log 228 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 217, in ensure_connection
+    self.connect()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 195, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 227, in get_new_connection
+    return Database.connect(**conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'117.136.44.192' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/io/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/io/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/io/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/io/.local/lib/python3.5/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/io/.local/lib/python3.5/site-packages/django/views/generic/base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/io/PycharmProjects/meiduo/meiduo/apps/contents/views.py", line 20, in get
+    categories = get_categories()
+  File "/home/io/PycharmProjects/meiduo/meiduo/apps/contents/utils.py", line 14, in get_categories
+    for channel in channels:
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/query.py", line 274, in __iter__
+    self._fetch_all()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1098, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 256, in cursor
+    return self._cursor()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 233, in _cursor
+    self.ensure_connection()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 217, in ensure_connection
+    self.connect()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 217, in ensure_connection
+    self.connect()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 195, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 227, in get_new_connection
+    return Database.connect(**conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1045, "Access denied for user 'root'@'117.136.44.192' (using password: YES)")
+ERROR 2019-10-23 15:56:40,448 basehttp 154 "GET / HTTP/1.1" 500 236184
+ERROR 2019-10-23 15:56:42,106 log 228 Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 217, in ensure_connection
+    self.connect()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 195, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 227, in get_new_connection
+    return Database.connect(**conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'117.136.44.192' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/io/.local/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/io/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/io/.local/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/io/.local/lib/python3.5/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/io/.local/lib/python3.5/site-packages/django/views/generic/base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/io/PycharmProjects/meiduo/meiduo/apps/contents/views.py", line 20, in get
+    categories = get_categories()
+  File "/home/io/PycharmProjects/meiduo/meiduo/apps/contents/utils.py", line 14, in get_categories
+    for channel in channels:
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/query.py", line 274, in __iter__
+    self._fetch_all()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1098, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 256, in cursor
+    return self._cursor()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 233, in _cursor
+    self.ensure_connection()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 217, in ensure_connection
+    self.connect()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 217, in ensure_connection
+    self.connect()
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/base/base.py", line 195, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/io/.local/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 227, in get_new_connection
+    return Database.connect(**conn_params)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.5/dist-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1045, "Access denied for user 'root'@'117.136.44.192' (using password: YES)")
+ERROR 2019-10-23 15:56:42,107 basehttp 154 "GET /favicon.ico HTTP/1.1" 500 236355
+INFO 2019-10-23 16:21:40,080 autoreload 597 Watching for file changes with StatReloader
+INFO 2019-10-23 16:22:00,126 basehttp 154 "GET / HTTP/1.1" 200 117261
+INFO 2019-10-23 16:22:00,217 basehttp 154 "GET /static/css/reset.css HTTP/1.1" 304 0
+INFO 2019-10-23 16:22:00,286 basehttp 154 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2019-10-23 16:22:00,294 basehttp 154 "GET /static/js/common.js HTTP/1.1" 304 0
+INFO 2019-10-23 16:22:00,340 basehttp 154 "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2019-10-23 16:22:00,341 basehttp 154 "GET /static/js/axios-0.18.0.min.js HTTP/1.1" 304 0
